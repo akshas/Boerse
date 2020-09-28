@@ -1,0 +1,15 @@
+C:\Users\alex\source\repos\Boerse\Boerse\bin\Debug\Boerse.exe.config
+C:\Users\alex\source\repos\Boerse\Boerse\bin\Debug\Boerse.exe
+C:\Users\alex\source\repos\Boerse\Boerse\bin\Debug\Boerse.pdb
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.csprojAssemblyReference.cache
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\MainWindow.g.cs
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\App.g.cs
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse_MarkupCompile.cache
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse_MarkupCompile.lref
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\MainWindow.baml
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.g.resources
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.Properties.Resources.resources
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.csproj.GenerateResource.cache
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.csproj.CoreCompileInputs.cache
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.exe
+C:\Users\alex\source\repos\Boerse\Boerse\obj\Debug\Boerse.pdb

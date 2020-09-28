@@ -1,0 +1,83 @@
+﻿<Window x:Class="Boerse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Boerse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="DataGridRow">
+            <Setter Property="Height" Value="25"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="BaseButton">
+            <Setter Property="Foreground" Value="DarkMagenta"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource BaseButton}" x:Key="ver">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="25" Margin="0 0 20 0" >
+                <TextBlock Text="Mein Capital: " FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Text="1000" Foreground="Red" Padding="10 0 0 0" FontSize="18"/>
+            </StackPanel>
+            <Grid >
+                <DataGrid x:Name="AktienTable" Grid.Column ="1" AutoGenerateColumns="False">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="Aktie" IsReadOnly="True" Width="*" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Im Depot" IsReadOnly="True" Width="65" Binding="{Binding Anzahl}"/>
+                        <DataGridTextColumn Header="Preis" IsReadOnly="True" Width="50" Binding="{Binding StartPreis, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                        <DataGridTemplateColumn Header="Anzahl" Width="100" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" x:Name="AnzahlKaufen"/>
+                                        <Button Grid.Column="1" Content="Kaufen" x:Name="KaufenBtn"   Click="OnKaufenBtnClick" Style="{StaticResource BaseButton}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn >
+                        <DataGridTemplateColumn Header="Anzahl" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" x:Name="AnzahlVerkaufen"/>
+                                        <Button Grid.Column="1" Content="Verkaufen" x:Name="VerkaufenBtn" Click="OnVerkaufenBtnClick" Style="{StaticResource ver}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <ListBox x:Name="MeineAktienList" >
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Anzahl}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox> 
+        </Grid>
+    </Grid>
+</Window>
